@@ -1,14 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package paquete04;
 
-/**
- *
- * @author reroes
- */
-public class Ciudad {
-    
+import java.io.Serializable;
+
+public class Ciudad implements Serializable{
+    private String nombreCiudad;
+    private String nombreProvincia;
+
+    public Ciudad(){
+
+    }
+
+    public Ciudad(String nombreCiudad, String nombreProvincia) {
+        this.nombreCiudad = nombreCiudad;
+        this.nombreProvincia = nombreProvincia;
+    }
+
+    public String getNombreCiudad() {
+
+        return nombreCiudad;
+    }
+
+    public String getNombreProvincia() {
+        return nombreProvincia;
+    }
+
+    public void setNombreCiudad(String nombreCiudad) {
+
+        this.nombreCiudad = nombreCiudad;
+    }
+
+    public void setNombreProvincia(String nombreProvincia) {
+
+        this.nombreProvincia = nombreProvincia;
+    }
 }
