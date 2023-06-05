@@ -55,12 +55,12 @@ public class Inmobiliaria {
 
     public void ArchivoCiudad() {
         try {
-            FileOutputStream fileOut = new FileOutputStream("ciudades.dat");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(ciudades);
-            out.close();
-            fileOut.close();
-            System.out.println("Se han guardado las ciudades correctamente.");
+            FileOutputStream ArchivoCi = new FileOutputStream("ciudades.dat");
+            ObjectOutputStream sc = new ObjectOutputStream(ArchivoCi);
+            sc.writeObject(ciudades);
+            sc.close();
+            ArchivoCi.close();
+            System.out.println("Guardado exitoso");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -68,12 +68,12 @@ public class Inmobiliaria {
 
     public void ArchivoCasa() {
         try {
-            FileOutputStream fileOut = new FileOutputStream("casas.dat");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(casas);
-            out.close();
-            fileOut.close();
-            System.out.println("Se han guardado las casas correctamente.");
+            FileOutputStream ArchivoCa = new FileOutputStream("casas.dat");
+            ObjectOutputStream sc = new ObjectOutputStream(ArchivoCa);
+            sc.writeObject(casas);
+            sc.close();
+            ArchivoCa.close();
+            System.out.println("Guardado exitoso");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -81,12 +81,12 @@ public class Inmobiliaria {
 
     public void ArchivoConstructora() {
         try {
-            FileOutputStream fileOut = new FileOutputStream("constructoras.dat");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(constructoras);
-            out.close();
-            fileOut.close();
-            System.out.println("Se han guardado las constructoras correctamente.");
+            FileOutputStream ArchivoCo = new FileOutputStream("constructoras.dat");
+            ObjectOutputStream sc = new ObjectOutputStream(ArchivoCo);
+            sc.writeObject(constructoras);
+            sc.close();
+            ArchivoCo.close();
+            System.out.println("SGuardado exitoso");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -94,11 +94,11 @@ public class Inmobiliaria {
 
     public void ArchivoBarrio() {
         try {
-            FileOutputStream fileOut = new FileOutputStream("barrios.dat");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(barrios);
-            out.close();
-            fileOut.close();
+            FileOutputStream ArchivoBa = new FileOutputStream("barrios.dat");
+            ObjectOutputStream sc = new ObjectOutputStream(ArchivoBa);
+            sc.writeObject(barrios);
+            sc.close();
+            ArchivoBa.close();
             System.out.println("Se han guardado los barrios correctamente.");
         } catch (IOException e) {
             e.printStackTrace();
@@ -107,12 +107,12 @@ public class Inmobiliaria {
 
     public void ArchivoPropietarios() {
         try {
-            FileOutputStream fileOut = new FileOutputStream("propietarios.dat");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(propietarios);
-            out.close();
-            fileOut.close();
-            System.out.println("Se han guardado los propietarios correctamente.");
+            FileOutputStream ArchivosPro = new FileOutputStream("propietarios.dat");
+            ObjectOutputStream sc = new ObjectOutputStream(ArchivosPro);
+            sc.writeObject(propietarios);
+            sc.close();
+            ArchivosPro.close();
+            System.out.println("Guardado exitoso");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -120,12 +120,12 @@ public class Inmobiliaria {
 
     public void ArchivoDepartamento() {
         try {
-            FileOutputStream fileOut = new FileOutputStream("departamentos.dat");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(departamentos);
-            out.close();
-            fileOut.close();
-            System.out.println("Se han guardado los departamentos correctamente.");
+            FileOutputStream ArchivosDe = new FileOutputStream("departamentos.dat");
+            ObjectOutputStream sc = new ObjectOutputStream(ArchivosDe);
+            sc.writeObject(departamentos);
+            sc.close();
+            ArchivosDe.close();
+            System.out.println("Guardado exitoso");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -133,32 +133,32 @@ public class Inmobiliaria {
 
     public void escribirPropietario() {
         try {
-            FileInputStream fileIn = new FileInputStream("propietarios.dat");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
-            List<Propietario> propietarios = (List<Propietario>) in.readObject();
-            in.close();
-            fileIn.close();
+            FileInputStream ArchivoDe = new FileInputStream("propietarios.dat");
+            ObjectInputStream sc = new ObjectInputStream(ArchivoDe);
+            List<Propietario> propietarios = (List<Propietario>) sc.readObject();
+            sc.close();
+            ArchivoDe.close();
 
-            System.out.println("Propietarios registrados:");
+            System.out.println("Propietario registrado:");
             for (Propietario propietario : propietarios) {
-                System.out.println("Nombre: " + propietario.getNombres() + " Apellido: " + propietario.getApellidos() + " Identificación: " + propietario.getIdentificacion());
+                System.out.println("Nombre: " + propietario.getNombres() + " \nApellido: " + propietario.getApellidos() + " \nIdentificación: " + propietario.getIdentificacion());
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-        }
+    }
     }
 
         public void escribirBarrios() {
             try {
-                FileInputStream fileIn = new FileInputStream("barrios.dat");
-                ObjectInputStream in = new ObjectInputStream(fileIn);
-                List<Barrio> barrios = (List<Barrio>) in.readObject();
-                in.close();
-                fileIn.close();
+                FileInputStream ArchivoBa = new FileInputStream("barrios.dat");
+                ObjectInputStream sc = new ObjectInputStream(ArchivoBa);
+                List<Barrio> barrios = (List<Barrio>) sc.readObject();
+                sc.close();
+                ArchivoBa.close();
 
-                System.out.println("Barrios registrados:");
+                System.out.println("Barrio registrado:");
                 for (Barrio barrio : barrios) {
-                    System.out.println("Nombre del Barrio: " + barrio.getNombreBarrio() + " Referencia: " + barrio.getReferencia());
+                    System.out.println("Nombre del Barrio: " + barrio.getNombreBarrio() + "\nReferencia: " + barrio.getReferencia());
                 }
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
@@ -167,15 +167,15 @@ public class Inmobiliaria {
 
         public void escribirCiudad() {
             try {
-                FileInputStream fileIn = new FileInputStream("ciudades.dat");
-                ObjectInputStream in = new ObjectInputStream(fileIn);
-                List<Ciudad> ciudades = (List<Ciudad>) in.readObject();
-                in.close();
-                fileIn.close();
+                FileInputStream ArchivoCi = new FileInputStream("ciudades.dat");
+                ObjectInputStream sc = new ObjectInputStream(ArchivoCi);
+                List<Ciudad> ciudades = (List<Ciudad>) sc.readObject();
+                sc.close();
+                ArchivoCi.close();
 
-                System.out.println("Ciudades registradas:");
+                System.out.println("Ciudade registrada:");
                 for (Ciudad ciudad : ciudades) {
-                    System.out.println(ciudad.getNombreCiudad() + " - Provincia: " + ciudad.getNombreProvincia());
+                    System.out.println("Nombre de la ciudad: " + ciudad.getNombreCiudad() + "\nNombre de la Provincia: " + ciudad.getNombreProvincia());
                 }
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
@@ -184,15 +184,15 @@ public class Inmobiliaria {
 
         public void escribirConstructora() {
             try {
-                FileInputStream fileIn = new FileInputStream("constructoras.dat");
-                ObjectInputStream in = new ObjectInputStream(fileIn);
-                List<Constructora> constructoras = (List<Constructora>) in.readObject();
-                in.close();
-                fileIn.close();
+                FileInputStream ArchivoCo = new FileInputStream("constructoras.dat");
+                ObjectInputStream sc = new ObjectInputStream(ArchivoCo);
+                List<Constructora> constructoras = (List<Constructora>) sc.readObject();
+                sc.close();
+                ArchivoCo.close();
 
-                System.out.println("Constructoras registradas:");
+                System.out.println("Constructora registrada:");
                 for (Constructora constructora : constructoras) {
-                    System.out.println(constructora.getNombreConstructora() + " - ID Empresa: " + constructora.getIdEmpresa());
+                    System.out.println("Nombre de la constructora: " + constructora.getNombreConstructora() + "\nID Empresa: " + constructora.getIdEmpresa());
                 }
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
@@ -201,21 +201,22 @@ public class Inmobiliaria {
 
         public void escribirCasa() {
             try {
-                FileInputStream fileIn = new FileInputStream("casas.dat");
-                ObjectInputStream in = new ObjectInputStream(fileIn);
-                List<Casa> casas = (List<Casa>) in.readObject();
-                in.close();
-                fileIn.close();
+                FileInputStream ArchivoCa = new FileInputStream("casas.dat");
+                ObjectInputStream sc = new ObjectInputStream(ArchivoCa);
+                List<Casa> casas = (List<Casa>) sc.readObject();
+                sc.close();
+                ArchivoCa.close();
 
-                System.out.println("Casas registradas:");
+                System.out.println("Casa registrada:");
                 for (Casa casa : casas) {
-                    System.out.println("Propietario: " + casa.getPropietario().getNombres() + " " + casa.getPropietario().getApellidos() + "-" + casa.getPropietario().getIdentificacion());
-                    System.out.println("Barrio: " + casa.getBarrio().getNombreBarrio() + " - Referencia: " + casa.getBarrio().getReferencia());
-                    System.out.println("Ciudad: " + casa.getCiudad().getNombreCiudad() + " - Provincia: " + casa.getCiudad().getNombreProvincia());
+                    System.out.println("Nombre: " + casa.getPropietario().getNombres() + "\nApellido: " + casa.getPropietario().getApellidos() + "\nIdentificacion: " + casa.getPropietario().getIdentificacion());
+                    System.out.println("Precio por metro Cuadrado: " + casa.getPrecioMetroCuadrado());
+                    System.out.println("Numero de metros Cuadrados: " + casa.getNumeroMetrosCuadrado());
+                    System.out.println("Barrio: " + casa.getBarrio().getNombreBarrio() + "\nReferencia: " + casa.getBarrio().getReferencia());
+                    System.out.println("Ciudad: " + casa.getCiudad().getNombreCiudad() + "\nProvincia: " + casa.getCiudad().getNombreProvincia());
                     System.out.println("Número de cuartos: " + casa.getNumeroCuartos());
-                    System.out.println("Constructora: " + casa.getCosntructora().getNombreConstructora() + " - ID Empresa: " + casa.getCosntructora().getIdEmpresa());
+                    System.out.println("Constructora: " + casa.getCosntructora().getNombreConstructora() + "\nID Empresa: " + casa.getCosntructora().getIdEmpresa());
                     System.out.println("Costo final: " + casa.getCostoFinal());
-                    System.out.println("-----------------------");
                 }
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
@@ -229,16 +230,15 @@ public class Inmobiliaria {
                 in.close();
                 fileIn.close();
 
-                System.out.println("Departamentos registrados:");
+                System.out.println("Departamento registrado:");
                 for (Departamento departamento : departamentos) {
-                    System.out.println("Propietario: " + departamento.getPropietario().getNombres() + " " + departamento.getPropietario().getApellidos());
-                    System.out.println("Barrio: " + departamento.getBarrio().getNombreBarrio() + " - Referencia: " + departamento.getBarrio().getReferencia());
-                    System.out.println("Ciudad: " + departamento.getCiudad().getNombreCiudad() + " - Provincia: " + departamento.getCiudad().getNombreProvincia());
+                    System.out.println("Nombre: " + departamento.getPropietario().getNombres() + "\nApellido: " + departamento.getPropietario().getApellidos()+ "\nIdentificacion: " + departamento.getPropietario().getIdentificacion());
+                    System.out.println("Barrio: " + departamento.getBarrio().getNombreBarrio() + "\nReferencia: " + departamento.getBarrio().getReferencia());
+                    System.out.println("Ciudad: " + departamento.getCiudad().getNombreCiudad() + "\nProvincia: " + departamento.getCiudad().getNombreProvincia());
                     System.out.println("Edificio: " + departamento.getNombreEdificio());
                     System.out.println("Ubicación: " + departamento.getUnicacionDepartamento());
-                    System.out.println("Constructora: " + departamento.getConstructora().getNombreConstructora() + " - ID Empresa: " + departamento.getConstructora().getIdEmpresa());
+                    System.out.println("Constructora: " + departamento.getConstructora().getNombreConstructora() + "\nID Empresa: " + departamento.getConstructora().getIdEmpresa());
                     System.out.println("Costo final: " + departamento.getCostoFinal());
-                    System.out.println("-----------------------");
                 }
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
