@@ -76,12 +76,13 @@ public class Ejecutor {
                 case 0:
                     b = false;
                     break;
-
+                default:
+                    System.out.println("Ingrese una opción válida");
             }
         }
     }
     private static void ListaPropietario() {
-        System.out.println("Agregar Propietario");
+        System.out.println("________Agregar Propietario________");
         System.out.print("Ingrese el nombre del propietario: ");
         String nombre = sc.next();
         System.out.print("Ingrese el apellido del propietario: ");
@@ -93,16 +94,16 @@ public class Ejecutor {
         inmobiliaria.ListaPropietarios(propietario);
         inmobiliaria.ArchivoPropietarios();
 
-        System.out.println("Pro3pietario agregado exitosamente.");
+        System.out.println("Propietario agregado exitosamente.");
     }
 
     private static void ListaBarrio() {
-        System.out.println("=== Agregar Barrio ===");
+        System.out.println("________Agregar Barrio________");
         System.out.print("Ingrese el nombre del barrio: ");
-        String nombre = sc.nextLine();
+        String nombre = sc.next();
 
         System.out.print("Ingrese la referencia del barrio: ");
-        String referencia = sc.nextLine();
+        String referencia = sc.next();
 
         Barrio barrio = new Barrio(nombre, referencia);
         inmobiliaria.ListaBarrio(barrio);
@@ -112,7 +113,7 @@ public class Ejecutor {
     }
 
     private static void ListaCiudad() {
-        System.out.println("=== Agregar Ciudad ===");
+        System.out.println("_______Agregar Ciudad________");
         System.out.print("Ingrese el nombre de la ciudad: ");
         String nombreCiudad = sc.next();
         System.out.print("Ingrese el nombre de la provincia: ");
@@ -126,7 +127,7 @@ public class Ejecutor {
     }
 
     private static void ListaConstructora() {
-        System.out.println("=== Agregar Constructora ===");
+        System.out.println("________Agregar Constructora________");
         System.out.print("Ingrese el nombre de la constructora: ");
         String nombre = sc.next();
         System.out.print("Ingrese el ID de la empresa: ");
@@ -140,27 +141,34 @@ public class Ejecutor {
     }
 
         private static void ListaCasa() {
-        System.out.println("=== Agregar Casa ===");
-        System.out.print("9Ingrese el nombre del propietario");
+        System.out.println("________Agregar Casa________");
+        System.out.print("Ingrese el nombre del propietario: ");
         String Nombre = sc.next();
-        System.out.print("Igrese el apellido del propietario");
+        System.out.print("Igrese el apellido del propietario: ");
         String apellido = sc.next();
         System.out.print("Ingrese la identificación del propietario: ");
         String identificacionPropietario = sc.next();
-        System.out.print("Ingrese el nombre del barrio: ");
-        String nombreBarrio = sc.next();
-        System.out.print("Ingrese el nombre de la ciudad: ");
-        String nombreCiudad = sc.next();
-        System.out.print("Ingrese el ID de la empresa constructora: ");
-        String idEmpresaConstructora = sc.next();
-        System.out.print("Ingrese el número de metros cuadrados: ");
-        double metrosCuadrados = sc.nextDouble();
         System.out.print("Ingrese el precio por metro cuadrado: ");
         double precioMetroCuadrado = sc.nextDouble();
+        System.out.print("Ingrese el número de metros cuadrados: ");
+        double metrosCuadrados = sc.nextDouble();
+        System.out.print("Ingrese el nombre del barrio: ");
+        String nombreBarrio = sc.next();
+        System.out.print("Ingrese la referencia del barrio: ");
+        String referencia = sc.next();
+        System.out.print("Ingrese el nombre de la ciudad: ");
+        String nombreCiudad = sc.next();
+        System.out.print("Ingrese el nombre de la provincia: ");
+        String nombreProvincia = sc.next();
+        System.out.print("Ingrese el nombre de la constructora: ");
+        String nombre = sc.next();
+        System.out.print("Ingrese el ID de la empresa constructora: ");
+        String idEmpresaConstructora = sc.next();
         System.out.print("Ingrese el número de cuartos: ");
         int numeroCuartos = sc.nextInt();
+        double CostoFinal = metrosCuadrados * precioMetroCuadrado;
 
-        Casa casa = new Casa(Nombre,apellido,identificacionPropietario, nombreBarrio, nombreCiudad, idEmpresaConstructora,metrosCuadrados, precioMetroCuadrado, numeroCuartos);
+        Casa casa = new Casa(Nombre,apellido,identificacionPropietario, nombreBarrio,referencia, nombreCiudad,nombreProvincia,nombre, idEmpresaConstructora,metrosCuadrados, precioMetroCuadrado, numeroCuartos,CostoFinal);
         inmobiliaria.ListaCasa(casa);
         inmobiliaria.ArchivoCasa();
 
@@ -168,28 +176,37 @@ public class Ejecutor {
     }
 
     private static void ListaDepartamento() {
-        System.out.println("=== Agregar Departamento ===");
-        System.out.print("Ingrese el nombre del propietario");
+        System.out.println("________Agregar Departamento________");
+        System.out.print("Ingrese el nombre del propietario: ");
         String Nombre = sc.next();
-        System.out.print("Igrese el apellido del propietario");
+        System.out.print("Igrese el apellido del propietario: ");
         String apellido = sc.next();
         System.out.print("Ingrese la identificación del propietario: ");
         String identificacionPropietario = sc.next();
-        System.out.print("Ingrese el nombre del barrio: ");
-        String nombreBarrio = sc.next();
-        System.out.print("Ingrese el nombre de la ciudad: ");
-        String nombreCiudad = sc.next();
-        System.out.print("Ingrese el ID de la empresa constructora: ");
-        String idEmpresaConstructora = sc.next();
-        System.out.print("Ingrese el número de metros cuadrados: ");
-        double metrosCuadrados = sc.nextDouble();
         System.out.print("Ingrese el precio por metro cuadrado: ");
         double precioMetroCuadrado = sc.nextDouble();
+        System.out.print("Ingrese el número de metros cuadrados: ");
+        double metrosCuadrados = sc.nextDouble();
         System.out.print("Ingrese el valor de la alícuota mensual: ");
         double valorAlicuotaMensual = sc.nextDouble();
+        System.out.print("Ingrese el nombre del barrio: ");
+        String nombreBarrio = sc.next();
+        System.out.print("Ingrese la referencia del barrio: ");
+        String referencia = sc.next();
+        System.out.print("Ingrese el nombre de la ciudad: ");
+        String nombreCiudad = sc.next();
+        System.out.print("Ingrese el nombre de la provincia: ");
+        String nombreProvincia = sc.next();
+        System.out.print("Ingrese el nombre del edificio: ");
+        String edificio = sc.next();
+        System.out.print("Ingrese el nombre de la constructora: ");
+        String nombre = sc.next();
+        System.out.print("Ingrese el ID de la empresa constructora: ");
+        String idEmpresaConstructora = sc.next();
+        double CostoFinal = (metrosCuadrados * precioMetroCuadrado) + (valorAlicuotaMensual * 12);
 
-        Departamento departamento = new Departamento(Nombre,apellido,identificacionPropietario, nombreBarrio, nombreCiudad,
-                idEmpresaConstructora, metrosCuadrados, precioMetroCuadrado, valorAlicuotaMensual);
+        Departamento departamento = new Departamento(Nombre,apellido,identificacionPropietario, nombreBarrio,referencia, nombreCiudad,nombreProvincia,edificio,
+                idEmpresaConstructora, metrosCuadrados, precioMetroCuadrado,nombre, valorAlicuotaMensual,CostoFinal);
         inmobiliaria.ListaDepartamento(departamento);
         inmobiliaria.ArchivoDepartamento();
 
